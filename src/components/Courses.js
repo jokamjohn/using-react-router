@@ -16,10 +16,10 @@ const Courses = ({match}) => (
         </div>
 
         {/* Write routes here... */}
-        <Route exact path="/courses" component={() => <Redirect to="/courses/html"/>}/>
-        <Route path="/courses/html" component={HTML}/>
-        <Route path="/courses/css" component={CSS}/>
-        <Route path="/courses/javascript" component={JavaScript}/>
+        <Route exact path={match.path} component={() => <Redirect to={`${match.path}/html`}/>}/>
+        <Route path={`${match.path}/html`} component={HTML}/>
+        <Route path={`${match.path}/css`} component={CSS}/>
+        <Route path={`${match.path}/javascript`} component={JavaScript}/>
 
     </div>
 );
